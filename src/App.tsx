@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Routes } from './screens/Routes'
 
 interface AppProps {
-  url: string
+  url?: string
 }
 export const App = ({ url }: AppProps) => {
   if (typeof window === 'undefined') {
@@ -16,7 +16,7 @@ export const App = ({ url }: AppProps) => {
   }
 
   return (
-    <BrowserRouter location={url}>
+    <BrowserRouter>
       <Routes />
     </BrowserRouter>
   )
