@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "eslint-import-resolver-node": "^0.3.4",
-    "next": "9.5.3",
+    "next": "^9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-query": "^2.15.1",

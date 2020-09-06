@@ -17,7 +17,7 @@ class NextJSDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="/favicon.png" />
+          <link rel="icon" href="/assets/img/favicon.png" />
         </Head>
         <body>
           <Main />

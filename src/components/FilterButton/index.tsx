@@ -19,7 +19,7 @@ export const FilterButton = ({ coin, active, onClick }: FilterButtonProps) => {
       }}
     >
       <img
-        src={`/${coin}.svg`}
+        src={`/assets/img/${coin.toLowerCase()}.svg`}
         alt="coin logo"
         className={styles.filterImg}
         width="20"

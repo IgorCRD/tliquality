@@ -12,7 +12,12 @@ export const RateCard = ({ from, to, rate }: RateCardProps) => {
     <div className={styles.card}>
       <div className={styles.content}>
         <div className={styles.logoAndName}>
-          <img src={`/${from}.svg`} alt="coin logo" width="32" height="32" />
+          <img
+            src={`/assets/img/${from.toLowerCase()}.svg`}
+            alt="coin logo"
+            width="32"
+            height="32"
+          />
           <span>{from}</span>
         </div>
 
@@ -23,13 +28,18 @@ export const RateCard = ({ from, to, rate }: RateCardProps) => {
         </div>
 
         <div className={styles.logoAndName}>
-          <img src={`/${to}.svg`} alt="coin logo" width="32" height="32" />
+          <img
+            src={`/assets/img/${to.toLowerCase()}.svg`}
+            alt="coin logo"
+            width="32"
+            height="32"
+          />
           <span>{to}</span>
         </div>
       </div>
 
       <div className={styles.swapButtonContainer}>
-        <img src="/swap.svg" alt="swap icon" />
+        <img src="/assets/img/swap.svg" alt="swap icon" />
       </div>
     </div>
   )

@@ -118,7 +118,11 @@ export const Home = () => {
             rel="noopener noreferrer"
           >
             Powered by
-            <img src="/logo.svg" alt="Liquality Logo" className={styles.logo} />
+            <img
+              src="/assets/img/logo.svg"
+              alt="Liquality Logo"
+              className={styles.logo}
+            />
           </a>
         </footer>
       </div>
