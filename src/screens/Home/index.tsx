@@ -5,19 +5,19 @@ import { Rating } from 'types/Rating'
 import styles from './homeStyle.module.scss'
 
 export const Home = () => {
-  const { data, isLoading } = useQuery('rattings', () =>
+  const { data } = useQuery('rattings', () =>
     fetch('https://liquality.io/swap/agent/api/swap/marketinfo').then(
-      (res) => res.json() as Promise<Rating>
+      (res) => res.json() as Promise<Array<Rating>>
     )
   )
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Liquality ratings</title>
-      </Head>
+    <>
+      <div className={styles.hero}>
+        <Head>
+          <title>Liquality ratings</title>
+        </Head>
 
-      <main className={styles.main}>
         <h1 className={styles.title}>
           <a href="https://liquality.io">Liquality</a> ratings!
         </h1>
@@ -25,26 +25,29 @@ export const Home = () => {
         <p className={styles.description}>
           Easy realtime ratings for your realtime crypto needs.
         </p>
+      </div>
 
-        <div className={styles.grid}>
-          {isLoading && <div>Loading...</div>}
-          <div>
-            <h3>Data</h3>
-            <pre>{JSON.stringify(data, null, '  ')}</pre>
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <div className={styles.grid}>
+            <div>
+              <h3>Data</h3>
+              <pre>{JSON.stringify(data, null, '  ')}</pre>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://liquality.io"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by
-          <img src="/logo.svg" alt="Liquality Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+        <footer className={styles.footer}>
+          <a
+            href="https://liquality.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by
+            <img src="/logo.svg" alt="Liquality Logo" className={styles.logo} />
+          </a>
+        </footer>
+      </div>
+    </>
   )
 }
