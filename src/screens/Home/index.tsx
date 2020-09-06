@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { useQuery } from 'hooks/useQuery'
 import { Rating } from 'types/Rating'
+import { RateCard } from 'components/RateCard'
 import styles from './homeStyle.module.scss'
 
 export const Home = () => {
@@ -23,17 +24,21 @@ export const Home = () => {
         </h1>
 
         <p className={styles.description}>
-          Easy realtime rates for your realtime crypto needs.
+          Realtime rates for your realtime crypto needs.
         </p>
       </div>
 
       <div className={styles.container}>
         <main className={styles.main}>
           <div className={styles.grid}>
-            <div>
-              <h3>Data</h3>
-              <pre>{JSON.stringify(data, null, '  ')}</pre>
-            </div>
+            {data?.map((rate) => (
+              <RateCard
+                key={`${rate.from}${rate.to}`}
+                from={rate.from}
+                to={rate.to}
+                rate={rate.rate}
+              />
+            ))}
           </div>
         </main>
 

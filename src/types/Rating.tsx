@@ -1,6 +1,8 @@
+import { Coin } from './Coin'
+
 export declare type Rating = {
-  from: 'BTC' | 'ETH' | 'DAI' | 'USDC' | 'USDT' | 'WBTC'
-  to: 'BTC' | 'ETH' | 'DAI' | 'USDC' | 'USDT' | 'WBTC'
+  from: Coin
+  to: Coin
   rate: number
   orderExpiresIn: number
   status: 'ACTIVE' | 'NOT_ACTIVE'
