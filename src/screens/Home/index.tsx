@@ -15,15 +15,15 @@ export const Home = () => {
     <>
       <div className={styles.hero}>
         <Head>
-          <title>Liquality ratings</title>
+          <title>Liquality rates</title>
         </Head>
 
         <h1 className={styles.title}>
-          <a href="https://liquality.io">Liquality</a> ratings!
+          <a href="https://liquality.io">Liquality</a> rates!
         </h1>
 
         <p className={styles.description}>
-          Easy realtime ratings for your realtime crypto needs.
+          Easy realtime rates for your realtime crypto needs.
         </p>
       </div>
 
