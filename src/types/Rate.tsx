@@ -1,6 +1,6 @@
 import { Coin } from './Coin'
 
-export declare type Rating = {
+export declare type Rate = {
   from: Coin
   to: Coin
   rate: number

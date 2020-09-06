@@ -1,0 +1,37 @@
+.filterImg {
+  box-shadow: 1px 1px 2px 1px #2a334b;
+  border-radius: 50px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (min-width: 599px) {
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 600px) {
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.buttonInactive {
+  filter: saturate(0);
+}
