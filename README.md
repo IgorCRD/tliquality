@@ -1,30 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Prerequisites
 
-## Getting Started
+You must have a compatible version of node and preferably\* yarn installed in your machine.
 
-First, run the development server:
+\* npm will most likely work just as good, but this project was not developed or tested using npm.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Running in your local machine
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To put it to work:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. install all project dependencies with `yarn install`
+2. start the development server with `yarn dev`
 
-## Learn More
+### Building to production
 
-To learn more about Next.js, take a look at the following resources:
+Follow the steps bellow to produce a production ready bundle:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. install all project dependencies with `yarn install`
+2. generate the production ready bundle with `yarn build`
+3. serve the bundle with `yarn run start:local`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Heroku support
 
-## Deploy on Vercel
+This project can be easily deployed to heroku. All you need to do to deploy it to heroku is:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. clone the git repository to your machine `git clone https://github.com/IgorCRD/tliquality.git`
+2. change from current directory to repository directory `cd tliquality`
+3. create a heroku app where your app is going to live `heroku create [appName]`
+4. push the current version to heroku which will start the deploy pipeline `git push heroku master`
+5. go to `http://[appName].herokuapp.com`
+6. "It's alive!"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+PS.: The above steps assume you have the Heroku CLI installed and logged on your machine
+
+### Available now on
+
+https://liquality-rates.herokuapp.com
+
+The project is available now on a free tier of heroku, so the first access can take a few seconds more than expected,
+and after 30 min of inactive heroku will deativate its hosting VM and it will only put it back up when accessed.
+
+Please, keep in mind that the first access is not a good representation of the app load time or performance. After the
+first access you can clear the cache and reload the page for load/perfomance tests.
