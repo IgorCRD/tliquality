@@ -39,11 +39,13 @@
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-unused-expressions": "error",
     "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/no-use-before-define": "error",
     "no-param-reassign": [
       "error",
       { "props": true, "ignorePropertyModificationsFor": ["stateDraft", "acc"] }
     ],
     "consistent-return": "off",
+    "no-use-before-define": "off",
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "no-unused-vars": "off",
     "no-unused-expressions": "off",
