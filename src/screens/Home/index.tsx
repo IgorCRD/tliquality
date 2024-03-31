@@ -1,27 +1,20 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
 import { useQuery } from 'hooks/useQuery'
-import { Rate } from 'types/Rate'
 import { RateCard } from 'components/RateCard'
 import { RefreshButton } from 'components/RefreshButton'
 import { Coin } from 'types/Coin'
 import { FilterButton } from 'components/FilterButton'
 import { useCoinFiltering } from 'hooks/useCoinFiltering'
+import { getRates } from 'utils/getRates'
 import styles from './homeStyle.module.scss'
 
 export const Home = () => {
   const [refreshRate, setRefreshRate] = useState(15000)
 
-  const { data: rates } = useQuery(
-    'rattings',
-    () =>
-      fetch('https://liquality.io/swap/agent/api/swap/marketinfo').then(
-        (res) => res.json() as Promise<Array<Rate>>
-      ),
-    {
-      refetchInterval: refreshRate,
-    }
-  )
+  const { data: rates } = useQuery('rattings', () => getRates(), {
+    refetchInterval: refreshRate,
+  })
 
   const {
     filteredRates,

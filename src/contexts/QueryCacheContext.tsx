@@ -1,4 +1,4 @@
 import React from 'react'
-import { QueryCache } from 'react-query'
+import { QueryClient } from 'react-query'
 
-export const QueryCacheContext = React.createContext<QueryCache | null>(null)
+export const QueryCacheContext = React.createContext<QueryClient | null>(null)

@@ -24,7 +24,7 @@ export const RateCard = ({ from, to, rate }: RateCardProps) => {
         <div className={styles.rate}>
           <div>{`1 ${from}`}</div>
           <div>=</div>
-          <div>{`${rate} ${to}`}</div>
+          <div>{`${rate.toPrecision(4)} ${to}`}</div>
         </div>
 
         <div className={styles.logoAndName}>

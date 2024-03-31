@@ -1,7 +1,8 @@
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { NextPageContext } from 'next'
-import { makeQueryCache } from 'react-query'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
 // TODO: Check on this issue "Typescript unable to find type definition for react-query/hydration even though they exist"
 // https://github.com/tannerlinsley/react-query/issues/970
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -20,16 +21,24 @@ const NextAppRoot = ({ location }: NextAppRootProps) => {
 
 NextAppRoot.getInitialProps = async (context: NextPageContext) => {
   const { req } = context
-  const queryCache = makeQueryCache()
+  const queryCache = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: Infinity,
+      },
+    },
+  })
 
   const promises: Array<Promise<any>> = []
 
   renderToStaticMarkup(
-    <QueryCacheContext.Provider value={queryCache}>
-      <QueryPromisesContext.Provider value={promises}>
-        <App url={req?.url} />
-      </QueryPromisesContext.Provider>
-    </QueryCacheContext.Provider>
+    <QueryClientProvider client={queryCache}>
+      <QueryCacheContext.Provider value={queryCache}>
+        <QueryPromisesContext.Provider value={promises}>
+          <App url={req?.url} />
+        </QueryPromisesContext.Provider>
+      </QueryCacheContext.Provider>
+    </QueryClientProvider>
   )
 
   await Promise.allSettled(promises)
