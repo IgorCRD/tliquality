@@ -1,23 +1,17 @@
-### Prerequisites
-
-You must have a compatible version of node and preferably\* yarn installed in your machine.
-
-\* npm will most likely work just as good, but this project was not developed or tested using npm.
-
 ### Running in your local machine
 
 To put it to work:
 
-1. install all project dependencies with `yarn install`
-2. start the development server with `yarn dev`
+1. install all project dependencies with `npm install`
+2. start the development server with `npm run dev`
 
 ### Building to production
 
 Follow the steps bellow to produce a production ready bundle:
 
-1. install all project dependencies with `yarn install`
-2. generate the production ready bundle with `yarn build`
-3. serve the bundle with `yarn run start:local`
+1. install all project dependencies with `npm install`
+2. generate the production ready bundle with `npm run build`
+3. serve the bundle with `npm run start:local`
 
 ### Heroku support
 
